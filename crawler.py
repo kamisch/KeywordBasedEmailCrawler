@@ -70,15 +70,15 @@ while len(new_urls):
     for anchor in soup.find_all("a"):
         # extract link url from the anchor
         link = anchor.attrs["href"] if "href" in anchor.attrs else ''
-        if ".edu" in link:
-            # resolve relative links
-            if link.startswith('/'):
-                link = base_url + link
-            elif not link.startswith('http'):
-                link = path + link
-            # add the new url to the queue if it was not enqueued nor processed yet
-            if not link in new_urls and not link in processed_urls:
-                new_urls.append(link)
+        
+        # resolve relative links
+        if link.startswith('/'):
+            link = base_url + link
+        elif not link.startswith('http'):
+            link = path + link
+        # add the new url to the queue if it was not enqueued nor processed yet
+        if not link in new_urls and not link in processed_urls:
+            new_urls.append(link)
             
 
 

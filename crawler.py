@@ -6,11 +6,11 @@ from collections import deque
 import re
 import csv
 
-keywords = ["example1","example2"] #insert keyword here
+keywords = ["welcome","university"] #insert keyword here, these are example keywords
 
 new_urls = deque(['https://www.unc.edu/'
 ,'http://www.duke.edu/'
-]) #insert the initial urls for the websites you want to search
+]) #insert the initial urls for the websites you want to search, these are example urls
 
 counter = 0
 linecounter = 0
@@ -27,6 +27,7 @@ while len(new_urls):
     counter += 1
     # move next url from the queue to the set of processed urls
     url = new_urls.popleft()
+    #print(url)
     processed_urls.add(url)
 
     # extract base url to resolve relative links

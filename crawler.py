@@ -11,7 +11,7 @@ import sys
 import time
 
 
-def main(argv):
+def crawl(argv):
     # parsing to get keywords and base urls
     argParser = argparse.ArgumentParser(description='Process some keywords.')
     keywords_csv = None
@@ -55,7 +55,6 @@ def main(argv):
 
     keywords_list = []
     urls = []
-
     with open(keywords_csv, 'r') as kCsv:
         reader = csv.reader(kCsv, delimiter="\t")
         for word in reader:
@@ -66,9 +65,10 @@ def main(argv):
         for url in reader:
             urls.append(url[0])
 
+    print(keywords_list,urls)
     # insert the initial urls for the websites you want to search, these are example urls
     new_urls = deque(urls)
-
+    print(new_urls)
     counter = 0
     linecounter = 0
 
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     # When importing groupre, you can provide arguments by calling it as such:
     #   groupre.main('groupre.py', ARGS)
 
-    main(sys.argv)
+    crawl(sys.argv)
 
     # Benchmark timer end.
     print(time.clock(), 'seconds elapsed.')

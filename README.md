@@ -7,4 +7,3 @@ It allows user to crawl certain website using keyword and save the emails to a l
 - Add text file input for urls and keywords. 
 - Add timer in loop
 
-### This project is modified from the code given by Michael Shilov http://scraping.pro/simple-email-crawler-python. 
